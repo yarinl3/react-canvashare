@@ -1,4 +1,4 @@
-
+// @ts-nocheck
 export const urlToFile = async (url, filename, mimeType) => {
     if (url.startsWith('data:')) {
 

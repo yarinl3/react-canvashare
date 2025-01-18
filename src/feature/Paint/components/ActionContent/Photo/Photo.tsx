@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Box, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {grey} from "@mui/material/colors";

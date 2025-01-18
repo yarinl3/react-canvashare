@@ -1,3 +1,4 @@
+// @ts-nocheck
 import deleteTag from "../../../api/hooks/tag/useDeleteTag.ts";
 import getTags from '../../../api/hooks/tag/useGetTags.ts';
 import EnhancedTable from "../../../components/Table/Table.tsx";

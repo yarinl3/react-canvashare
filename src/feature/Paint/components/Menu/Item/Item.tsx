@@ -2,7 +2,7 @@ import {ACTION_TYPE, mapActionToIcon} from "../../../paint.config.ts";
 import Button from "@mui/material/Button";
 import {blue, grey} from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
-import React, {FC} from "react";
+import {FC} from "react";
 import {Stack} from "@mui/material";
 import { usePaint } from "../../../../../context/paint.context.tsx";
 

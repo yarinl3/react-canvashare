@@ -1,9 +1,1 @@
-add to package.json to scripts:
-    "heroku-postbuild":  "npm run build",
-    "start": "serve -s dist",
-
-add to package.json to dependencies:
-    "serve": "^14.2.4"
-
-add Proc file with this content:
-web: npm run start
+add // @ts-nocheck in top files

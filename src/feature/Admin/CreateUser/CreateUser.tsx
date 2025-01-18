@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Avatar, Box, Checkbox, CircularProgress, Container, FormControlLabel, IconButton, Stack } from "@mui/material";

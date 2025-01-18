@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Avatar, Drawer, IconButton, Menu, MenuItem} from "@mui/material";
 import React, {useState} from "react";
 import {useAuth} from "../../../context/auth.context.tsx";

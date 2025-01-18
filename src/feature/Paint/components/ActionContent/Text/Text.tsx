@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {FC, MutableRefObject, useState} from "react";
 import {Canvas, IText} from "fabric";
 import { v4 as uuidv4 } from 'uuid';

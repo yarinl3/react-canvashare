@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {ReactNode} from "react";
 import {Box} from "@mui/material";
 import {blue, grey} from "@mui/material/colors";

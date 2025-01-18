@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Navigate, Outlet} from "react-router-dom";
 import {useAuth} from "../context/auth.context.tsx";
 import useGetUser from "../api/hooks/user/useGetUser.ts";

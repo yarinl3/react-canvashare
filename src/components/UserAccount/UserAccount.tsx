@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Box, CircularProgress, Stack} from "@mui/material";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";

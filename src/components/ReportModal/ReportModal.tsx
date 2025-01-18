@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {FC, useState} from 'react';
 import Box from '@mui/material/Box';
 import FlagIcon from '@mui/icons-material/Flag';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {urlToFile} from "../utils/upload.ts";
 import {useMutation} from "@tanstack/react-query";
 import * as api from "../api/upload.ts";

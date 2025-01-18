@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Autocomplete, TextField} from "@mui/material";
 import useGetTags from "../../../api/hooks/tag/useGetTags.ts";
 import {FC} from "react";

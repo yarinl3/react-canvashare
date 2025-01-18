@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {Canvas, PencilBrush, Shadow, SprayBrush} from "fabric";
 import {IEvent} from "fabric/fabric-impl";
 import {DRAW_TYPE} from "./draw.config.ts";

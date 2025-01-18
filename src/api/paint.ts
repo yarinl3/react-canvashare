@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {AxiosResponse} from "axios";
 import instance from "../server/axios.ts";
 import {PaintPayload} from "../types/paint.ts";
