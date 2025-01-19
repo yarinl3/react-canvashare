@@ -1,5 +1,5 @@
 // https://fabricjs.com/demos/free-drawing/
-// @ts-nocheck
+
 import {Canvas, Textbox} from "fabric";
 
 export const updateFontWeight = (paint: Canvas, id: string, fontWeight: string) => {

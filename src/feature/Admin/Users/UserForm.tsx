@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Avatar, Box, Checkbox, CircularProgress, Container, FormControlLabel, IconButton, Stack } from "@mui/material";
@@ -15,27 +14,31 @@ import useCreateUser from "../../../api/hooks/user/useCreateUser.ts";
 import Textarea from "../../../components/Form/Textarea/Textarea.tsx";
 import useGetUser from "../../../api/hooks/user/useGetUser.ts";
 import useUpdateUser from "../../../api/hooks/user/useUpdateUser.ts";
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import {useNavigate, useParams} from "react-router-dom";
+
+const roles = [
+    'admin_user_view',
+    'admin_user_management',
+    'admin_paint_view',
+    'admin_paint_management',
+    'admin_report_view',
+    'admin_report_management',
+    'admin_roles_view',
+    'admin_roles_management']
 
 const schema = z.object({
     username: z.string().min(4, { message: "Required" }),
     email: z.string().email({ message: "Email not valid" })
 });
 
-const UserForm = ({userId}: {userId?: number}) => {
+const UserForm = () => {
     const [isUploadFileOpen, setIsUploadFileOpen] = useState<boolean>(false);
     const {mutate: createUser, isPending: createIsPending} = useCreateUser();
     const {mutate: updateUser, isPending: updateIsPending} = useUpdateUser();
+    const { id: userId } = useParams();
     const { data: user, isPending: getIsPending } = useGetUser(userId ?? 0);
-
-    const roles = [
-        ['User table view', 'user_view'],
-        ['User table management', 'user_management'],
-        ['Paint table view', 'paint_view'],
-        ['Paint table management', 'paint_management'],
-        ['Report table view', 'report_view'],
-        ['Report table management', 'report_management'],
-        ['Roles_view', 'roles_view'],
-        ['Roles management', 'roles_management']]
+    const navigate = useNavigate();
 
     const {
         handleSubmit,
@@ -71,6 +74,10 @@ const UserForm = ({userId}: {userId?: number}) => {
             user.profilePhoto = profilePhoto;
     }
 
+    const handleReturn = () => {
+        navigate(-1);
+    }
+
     useEffect(() =>{
         if (userId){
             setValue('username', user?.username)
@@ -84,6 +91,10 @@ const UserForm = ({userId}: {userId?: number}) => {
 
     return (
         <>
+            <Stack flexDirection="row" alignItems='center' onClick={handleReturn}>
+                <ArrowBackOutlinedIcon fontSize={'large'} />
+                <Box pl={1}>Return</Box>
+            </Stack>
             <Stack alignItems="center" justifyContent="center" flex={1}>
                 <Box
                     p={2}
@@ -139,28 +150,25 @@ const UserForm = ({userId}: {userId?: number}) => {
                                 Select user roles
                             </Typography>
                             <Stack flexDirection="row">
-                                <Stack flexDirection="column" pr={5} key={'col-1'}>
-                                    {roles.slice(0,4).map((role) => {
+                                {!getIsPending && getValues("roles") && [0, 1].map(i => {
                                     return (
-                                            <Box display="block" key={role[1]}>
-                                                <FormControlLabel
-                                                    control={<Checkbox />}
-                                                    label={role[0]}
-                                                    onChange={(e) => setValue("roles", [...(e.target.checked ? [role[1]] : []), ...(getValues("roles") ?? [])])}                                                />
-                                            </Box>
-                                    )})}
-                                </Stack>
-                                <Stack flexDirection="column" key={'col-2'}>
-                                    {roles.slice(4,8).map((role) => {
-                                        return (
-                                            <Box display="block" key={role[1]}>
-                                                <FormControlLabel
-                                                    control={<Checkbox />}
-                                                    label={role[0]}
-                                                    onChange={(e) => setValue("roles", [...(e.target.checked ? [role[1]] : []), ...(getValues("roles") ?? [])])}                                                />
-                                            </Box>
-                                        )})}
-                                </Stack>
+                                    <Stack flexDirection="column" pr={5} key={`col-${i}`}>
+                                        {roles.slice(i*4, 4 * (i+1)).map((role) => {
+                                            return (
+                                                <Box display="block" key={role[1]}>
+                                                    <FormControlLabel
+                                                        control={<Checkbox defaultChecked={!!(getValues("roles")?.includes(role[1]))} />}
+                                                        label={<Typography textTransform={"capitalize"}>{role.replaceAll('_', ' ')}</Typography>}
+                                                        onChange={(e) => setValue("roles",
+                                                            [
+                                                                ...(e.target.checked ? [role[1]] : []),
+                                                                ...(getValues("roles")?.filter((j: string) => j !== role[1]) ?? [])
+                                                            ])} />
+                                                </Box>
+                                            )})}
+                                    </Stack>
+                                    )
+                                })}
                             </Stack>
                         </Box>
                         <Stack alignItems="center" justifyContent="center">

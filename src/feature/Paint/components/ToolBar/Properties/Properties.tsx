@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Button from "@mui/material/Button";
 import {
     Popover,

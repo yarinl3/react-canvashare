@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {Box, CircularProgress, Stack} from "@mui/material";
 import Card from "./PaintItem/PaintItem.tsx";
 import {useInView} from "react-intersection-observer";

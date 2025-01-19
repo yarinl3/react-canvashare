@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {Avatar, Drawer, IconButton, Menu, MenuItem} from "@mui/material";
 import React, {useState} from "react";
 import {useAuth} from "../../../context/auth.context.tsx";
@@ -8,6 +7,7 @@ import useGetUser from "../../../api/hooks/user/useGetUser.ts";
 import {grey} from "@mui/material/colors";
 import UserAccount from "../../UserAccount/UserAccount.tsx";
 import {toast} from "react-toastify";
+import Permissions from "../../Permissions/Permissions.tsx";
 
 export const User  = () => {
     const [openD, setOpenD] = useState(false);
@@ -75,7 +75,9 @@ export const User  = () => {
             >
                 <MenuItem onClick={handleProfile}>Profile</MenuItem>
                 <MenuItem onClick={handleAccount}>My Account</MenuItem>
-                <MenuItem onClick={handleAdmin}>Admin</MenuItem>
+                <Permissions roles={['admin_view']}>
+                    <MenuItem onClick={handleAdmin}>Admin</MenuItem>
+                </Permissions>
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
             <Drawer open={openD} anchor="right" onClose={() => setOpenD(false)}>

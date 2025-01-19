@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {CircularProgress, ImageList, ImageListItem, Modal, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import {blue, grey} from "@mui/material/colors";

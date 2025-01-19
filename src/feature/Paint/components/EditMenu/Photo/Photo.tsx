@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {Stack} from "@mui/material";
 import {FC, MutableRefObject} from "react";
 import Button from "@mui/material/Button";

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {IconButton, Stack} from "@mui/material";
 import {grey} from "@mui/material/colors";
 import Shape from "./Shape/Shape.tsx";

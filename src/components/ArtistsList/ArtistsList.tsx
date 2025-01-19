@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {CircularProgress, Stack} from "@mui/material";
 import Card from "./Artist/Artist.tsx";
 import useGetUsers from "../../api/hooks/user/useGetUsers.ts";

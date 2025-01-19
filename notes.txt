@@ -1,1 +1,12 @@
 add // @ts-nocheck in top files
+
+add this lines to package.json to scripts:
+
+        "heroku-postbuild": "npm run build",
+        "start": "serve -s dist",
+
+add this dependency:
+    "serve": "^14.2.1"
+
+create Proc file with this command:
+    npm run start

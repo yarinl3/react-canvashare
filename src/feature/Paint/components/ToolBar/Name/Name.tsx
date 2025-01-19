@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {TextField} from "@mui/material";
 import { usePaint } from "../../../../../context/paint.context.tsx";
 import {useParams} from "react-router-dom";

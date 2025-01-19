@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {Box, Modal, Stack} from "@mui/material";
 import {green, grey, red} from "@mui/material/colors";
 import React, {FC, useLayoutEffect} from "react";

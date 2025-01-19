@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Typography from '@mui/material/Typography';
 import {useState} from "react";
 import {Avatar, Stack} from "@mui/material";

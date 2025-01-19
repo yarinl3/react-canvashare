@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {useLayoutEffect, useRef, useState} from "react";
 import {Canvas as FabricCanvas, FabricObject} from "fabric";
 import {CircularProgress, Stack} from "@mui/material";

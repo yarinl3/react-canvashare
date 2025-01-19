@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {useInfiniteQuery} from "@tanstack/react-query";
 import * as api from "../../paint.ts";
 

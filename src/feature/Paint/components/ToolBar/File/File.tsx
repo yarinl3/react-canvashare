@@ -1,4 +1,3 @@
-// @ts-nocheck
 import Button from "@mui/material/Button";
 import {Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Popover} from "@mui/material";
 import React, {FC, MutableRefObject, useState} from "react";

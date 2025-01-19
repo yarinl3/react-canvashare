@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {createContext, useContext, useLayoutEffect, useState} from 'react';
 import {PaintPayload} from "../types/paint.ts";
 import {ACTION_TYPE} from "../feature/Paint/paint.config.ts";

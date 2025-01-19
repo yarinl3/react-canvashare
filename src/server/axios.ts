@@ -3,7 +3,7 @@ import {objectToCamelCase, objectToSnakeCase} from "../utils/utils.ts";
 import * as cookie from "../utils/cookie.ts";
 
 const config = {
-    baseURL: 'https://canvashare-backend-b81b5aa23e4f.herokuapp.com/',
+    baseURL: 'http://localhost:8000/',
     headers: {
         "accept": "application/json",
         "Content-Type": "application/json",

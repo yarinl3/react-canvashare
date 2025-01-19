@@ -1,4 +1,3 @@
-// @ts-nocheck
 import PaintList from "../../components/PaintList/PaintList.tsx";
 import {Box, Container} from "@mui/material";
 import Typography from "@mui/material/Typography";

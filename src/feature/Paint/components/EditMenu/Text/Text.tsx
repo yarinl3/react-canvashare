@@ -1,5 +1,4 @@
-// @ts-nocheck
-import {FC, MutableRefObject, useLayoutEffect, useState} from "react";
+import React, {FC, MutableRefObject, useLayoutEffect, useState} from "react";
 import {Canvas} from "fabric";
 import {Box, IconButton, Slider, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";

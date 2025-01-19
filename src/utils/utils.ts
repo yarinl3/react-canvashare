@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {camelCase, snakeCase} from 'lodash';
 
 export const objectToCamelCase = (data: Object) => {

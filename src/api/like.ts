@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {AxiosResponse} from "axios";
 import instance from "../server/axios.ts";
 import {LikePayload} from "../types/like.ts";

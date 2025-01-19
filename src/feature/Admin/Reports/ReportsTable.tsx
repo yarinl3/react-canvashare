@@ -1,4 +1,3 @@
-// @ts-nocheck
 import deleteReport from "../../../api/hooks/report/useDeleteReport.ts";
 import getReports from '../../../api/hooks/report/useGetReports.ts'
 import EnhancedTable from "../../../components/Table/Table.tsx"

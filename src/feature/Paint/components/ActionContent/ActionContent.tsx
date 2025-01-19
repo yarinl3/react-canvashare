@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {Box, IconButton, Stack} from "@mui/material";
 import {grey} from "@mui/material/colors";
 import CloseIcon from "@mui/icons-material/Close";

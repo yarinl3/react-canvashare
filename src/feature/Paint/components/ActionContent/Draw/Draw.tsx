@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {Canvas} from "fabric";
 import React, {FC, MutableRefObject, useLayoutEffect, useState} from "react";
 import {Box, FormControl, IconButton, MenuItem, Select, SelectChangeEvent, Slider, Stack} from "@mui/material";

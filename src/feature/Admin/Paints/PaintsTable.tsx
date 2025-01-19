@@ -1,4 +1,3 @@
-// @ts-nocheck
 import deletePaint from "../../../api/hooks/paint/useDeletePaint.ts";
 import getPaints from '../../../api/hooks/paint/useGetPaints.ts'
 import EnhancedTable from "../../../components/Table/Table.tsx"
