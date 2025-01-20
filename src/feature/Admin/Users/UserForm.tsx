@@ -18,14 +18,17 @@ import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import {useNavigate, useParams} from "react-router-dom";
 
 const roles = [
-    'admin_user_view',
-    'admin_user_management',
-    'admin_paint_view',
-    'admin_paint_management',
-    'admin_report_view',
-    'admin_report_management',
-    'admin_roles_view',
-    'admin_roles_management']
+    'admin_view',
+    'user_view',
+    'user_management',
+    'paint_view',
+    'paint_management',
+    'report_view',
+    'report_management',
+    'tag_view',
+    'tag_management',
+    'roles_view',
+    'roles_management']
 
 const schema = z.object({
     username: z.string().min(4, { message: "Required" }),
@@ -86,6 +89,9 @@ const UserForm = () => {
             setValue('about', user?.about ?? '')
             setValue('profilePhoto', user?.profilePhoto ?? '')
             setValue('roles', user?.roles ?? [])
+        }
+        else{
+            setValue('roles', [])
         }
     }, [setValue, user, userId, getValues])
 
@@ -150,19 +156,19 @@ const UserForm = () => {
                                 Select user roles
                             </Typography>
                             <Stack flexDirection="row">
-                                {!getIsPending && getValues("roles") && [0, 1].map(i => {
+                                {((!getIsPending && !!user?.roles) || !userId) && [0, 1].map(i => {
                                     return (
                                     <Stack flexDirection="column" pr={5} key={`col-${i}`}>
-                                        {roles.slice(i*4, 4 * (i+1)).map((role) => {
+                                        {roles.slice(i*6, 6 * (i+1)).map((role) => {
                                             return (
-                                                <Box display="block" key={role[1]}>
+                                                <Box display="block" key={role}>
                                                     <FormControlLabel
-                                                        control={<Checkbox defaultChecked={!!(getValues("roles")?.includes(role[1]))} />}
+                                                        control={<Checkbox defaultChecked={user ? !!(user?.roles?.includes(role)): false} />}
                                                         label={<Typography textTransform={"capitalize"}>{role.replaceAll('_', ' ')}</Typography>}
                                                         onChange={(e) => setValue("roles",
                                                             [
-                                                                ...(e.target.checked ? [role[1]] : []),
-                                                                ...(getValues("roles")?.filter((j: string) => j !== role[1]) ?? [])
+                                                                ...(e.target.checked ? [role] : []),
+                                                                ...(getValues("roles")?.filter((j: string) => j !== role) ?? [])
                                                             ])} />
                                                 </Box>
                                             )})}
