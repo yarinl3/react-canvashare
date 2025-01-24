@@ -5,7 +5,7 @@ export interface userTable {
     isBlocked: boolean;
     profilePhoto: string;
     coverPhoto: string;
-    password: string;
+    roles?: string[];
 }
 
 export interface RegisterPayload {
@@ -24,7 +24,5 @@ export interface UserPayload {
     isBlocked?: boolean;
     tags?: string[];
     about?: string;
-    profilePhoto?: string;
-    coverPhoto?: string;
     roles?: string[];
 }
